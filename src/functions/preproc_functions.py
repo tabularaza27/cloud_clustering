@@ -36,9 +36,11 @@ def get_pred_dfs(start_points_df, traj_df_, traj_array, cluster_pred,var="dust")
     elif var=="omega":
         c_map = {c_idx: c_name for c_idx, c_name in zip(np.flip(np.argsort(np.mean(model.cluster_centers_,1).squeeze())),["1_low","2_medium","3_high"])} # renaming clusters to intrepretable names corresponding to low, medium, high dust concentrations
         cluster_pred_df = cluster_pred_df.replace({"cluster_idx": c_map})
-        
-    traj_df = pd.merge(traj_df_, cluster_pred_df.drop(["trajectory_id_top","trajectory_id_base","T_rounded_base","T_rounded_top","OMEGA_rounded_base","OMEGA_rounded_top","DU_sup_log_base","DU_sup_log_top","nightday_flag_top","nightday_flag_base","region_top"],1), on="cloud_id")
-    traj_df = traj_df.rename(columns={"region_base":"region"})
+    
+    # from David see mail    
+    #traj_df = pd.merge(traj_df_, cluster_pred_df.drop(["trajectory_id_top","trajectory_id_base","T_rounded_base","T_rounded_top","OMEGA_rounded_base","OMEGA_rounded_top","DU_sup_log_base","DU_sup_log_top","nightday_flag_top","nightday_flag_base","region_top"],1), on="cloud_id")
+    #traj_df = traj_df.rename(columns={"region_base":"region"})
+    traj_df = pd.merge(traj_df_, cluster_pred_df[["cluster_idx","cloud_id"]],on="cloud_id")
     
     return cluster_pred_df, traj_df
 

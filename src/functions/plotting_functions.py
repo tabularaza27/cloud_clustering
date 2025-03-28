@@ -11,10 +11,18 @@ from helper_functions import percentile
 
 ### kwargs / dicts / meta data ###
 
-cluster_labels = {"0_in-situ": "in situ",
+cluster_labels = {"0_in-situ": "in situ (warm)",
+                  "0_in-situ_cold": "in situ (cold)",
+                  '1_in-situ': "in situ (warm)",
+                  '1_in-situ_warm': "in situ (warm)",
                   "1_hybrid": "hybrid", 
+                  "1_hybird": "hybrid",
+                  "2_hybrid": "hybrid",
+                  "2_liquid-origin": "liquid origin",
                   "2_liquid-origin_thin": "liquid origin (thin)", 
                   "3_liquid-origin_thick": "liquid origin (thick)",
+                  "3_liquid_origin_thick": "liquid origin (thick)",
+                  "3_liquid-origin": "liquid origin",
                   "1_low": "low ω regime",
                   "2_medium": "medium ω regime",
                   "3_high": "high ω regime"}
