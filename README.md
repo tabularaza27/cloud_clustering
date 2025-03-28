@@ -19,6 +19,6 @@ This repo contains the code for replicating the research conducted in "Cirrus fo
 
 The code to train time series clustering models as described in the paper are located in `src/Clustering.ipynb`. The notebook `src/Analysis_and_Plotting.ipynb` contains code for data analysis and creation of the paper figures. Functions used in the notebooks are in the respective files in `src/functions`.
 
-The data can be downloaded from [Zenodo]()
+The data can be downloaded from [Zenodo](https://doi.org/10.5281/zenodo.13168762)
 
 To create a conda environment containing all required packages run `$ conda create --name <env> --file requirements.txt`
